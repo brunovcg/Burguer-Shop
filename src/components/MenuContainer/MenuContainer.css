@@ -1,4 +1,5 @@
 .prodContainer{
     display: flex;
     flex-direction: row;
+    height: 170px;
 }
