@@ -37,38 +37,26 @@ class App extends Component {
       this.somaTotal( products.find(x=>x.id===productId).price )
 
       this.setState({currentSale: {saleDetails: [...saleDetails, products.find(x=>x.id===productId)]}})
-     }  else {alert("A pedido do Extra: Você não pode selecionar itens duplicados!")}
+     }  else {alert(`A pedido do Extra: Você não pode selecionar itens duplicados! Duplicado = ${products.find(x=>x.id===productId).name}..`)}
   
      
   }
 
   somaTotal = (index) => {
-
-    const {products} = this.state
+  
     const {total} = this.state
-
-    // const subTotal = saleDetails.reduce((acc, nextValue,)=> { return acc+ nextValue.price},1)   
-
-    
-    console.log(total)
     
     this.setState({total: Math.round((total + index)*100)/100})
-
-    
   }
 
 
   showSale = () =>{
-    
-
-
-    
-   
+       
     return this.state.currentSale.saleDetails
   }
   
   render(){
-    // const {products, filteredProducts} = this.state
+  
     return (
       
       <div className="App">
@@ -82,18 +70,15 @@ class App extends Component {
             />
         </div>
             
-          <MenuContainer menu={this.showProducts()} prodId={this.handClick} showButton={"yes"}/>
+          <MenuContainer menu={this.showProducts()} prodId={this.handClick} showButton={"yes"} giveClass={"prod"}/>
 
           <h2 className ="shopTitle">No Carrinho</h2>
           <div className = "Subtotal">{`Subtotal R$ ${(this.state.total).toFixed(2)}`}</div>
           <div className = "shopContainer">
 
-            <MenuContainer menu={this.showSale()}></MenuContainer>
+            <MenuContainer menu={this.showSale()} giveClass={"prodVitrine"}></MenuContainer>
 
           </div>
-
-
-
     
         </main>
       </div>
