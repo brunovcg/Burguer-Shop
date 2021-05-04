@@ -14,7 +14,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #bfcff0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,6 +26,39 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.filtroBox{
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  margin: 0 0 50px 0;
+}
+
+h3 {
+  margin: 0 20px;
+}
+
+.filtered {
+  width: 300px;
+  height: 30px;
+  
+  border-radius: 10px;
+}
+
+.teste {
+  background-color: tomato;
+}
+
+.shopTitle {
+  width: 80%;
+  background-color: teal;
+}
+
+.Subtotal {
+  color: red;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
 
 @keyframes App-logo-spin {
